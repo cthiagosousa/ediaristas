@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load easy_mask %}
+{% block content %}
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CEP</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for diarist in diarists %}
+                <tr>
+                    <td>{{diarist.id}}</td>
+                    <td>{{diarist.nome_completo}}</td>
+                    <td>{{diarist.email}}</td>
+                    <td>{{diarist.cep | cep}}</td>
+                    <td>
+                        <a href="{% url 'update-diarist' diarist.id %}">Editar</a>
+                        <a href="{% url 'delete-diarist' diarist.id %}">Remover</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'create-diarist' %}" class="btn btn-primary">Cadastrar</a>
+{% endblock content %}
