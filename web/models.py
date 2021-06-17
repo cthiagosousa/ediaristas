@@ -10,6 +10,7 @@ class Diarist(models.Model):
     bairro = models.CharField(max_length=30, null=False, blank=False)
     complemento = models.CharField(max_length=100, null=False, blank=True)
     cep = models.CharField(max_length=8, null=False, blank=False)
+    cidade = models.CharField(max_length=30, null=False, blank=True)
     estado = models.CharField(max_length=2, null=False, blank=False)
     codigo_ibge = models.IntegerField(null=False, blank=False)
     imagem_usuario = models.ImageField(null=False)
