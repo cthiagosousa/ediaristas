@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from .services.get_cep_service import listDiaristsByCity
 from .serializers.diarist_city_serializer import DiaristCitySerializer
-from ediaristas.api.pagination.diarist_pagination import DiaristPagination
+from api.pagination.diarist_pagination import DiaristPagination
 
 class DiaristView(APIView, DiaristPagination):
     def get(self, request, format=None):
